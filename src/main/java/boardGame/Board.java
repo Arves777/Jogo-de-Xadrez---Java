@@ -50,6 +50,9 @@ public class Board {
         if(!positionExists(position)){
             throw new BoardException("Position not on the Board");
         }
+        if (piece(position) == null) {
+            return null;
+	}
         Piece aux = piece(position);
         aux.position = null;
         pieces[position.getRow()][position.getColumn()] = null;
